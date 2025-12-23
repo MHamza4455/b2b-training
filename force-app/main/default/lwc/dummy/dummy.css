@@ -1,0 +1,92 @@
+/* Simple styling for the dummy utilization component */
+:host {
+    display: block;
+}
+
+.utilizationProgressContainer {
+    background-color: #f5f8ff;
+    border: 1px solid #d9e2f3;
+    border-radius: 12px;
+    padding: 16px 20px;
+    box-shadow: 0 2px 8px rgba(0, 23, 55, 0.08);
+}
+
+.progress-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.progress-title {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1c3150;
+}
+
+.progress-value {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1a73e8;
+}
+
+.progress-bar {
+    position: relative;
+    display: flex;
+    height: 16px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: linear-gradient(90deg, #e9eef9 0%, #e1e9f5 100%);
+    margin-bottom: 14px;
+}
+
+.progress-fill {
+    height: 100%;
+    transition: width 240ms ease;
+}
+
+.msl-segment {
+    background: linear-gradient(90deg, #4c7dff 0%, #5ea0ff 100%);
+}
+
+.smi-segment {
+    background: linear-gradient(90deg, #00b8a9 0%, #27d8c9 100%);
+}
+
+.load-legend {
+    gap: 8px 0;
+    margin-bottom: 10px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #2d3a4a;
+}
+
+.legend-swatch {
+    width: 12px;
+    height: 12px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.msl-swatch {
+    background: #4c7dff;
+}
+
+.smi-swatch {
+    background: #00b8a9;
+}
+
+.empty-swatch {
+    background: #e9eef9;
+    border: 1px solid #d9e2f3;
+}
+
+.progress-slot {
+    margin-top: 8px;
+}

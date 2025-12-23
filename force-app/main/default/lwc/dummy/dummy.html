@@ -1,0 +1,50 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 12-23-2025
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template lwc:render-mode="light">
+    <section class="utilizationProgressContainer progress-container">
+        
+        <div class="progress-header">
+            <h3 class="progress-title">{totalLoad} / {maxCapacity} Pallets Used</h3>
+            <span class="progress-value">{totalPercent}%</span>
+        </div>
+
+        <div class="progress-bar">
+            <div
+                class="progress-fill msl-segment"
+                style={mslWidthStyle}>
+            </div>
+            <div
+                class="progress-fill smi-segment"
+                style={smiWidthStyle}>
+            </div>
+        </div>
+
+        <div class="load-legend slds-grid slds-wrap slds-grid_align-space">
+            <div class="legend-item slds-col_padded">
+                <span class="legend-swatch msl-swatch"></span>
+                <span class="legend-label">MSL Load:</span>
+                <span class="legend-value">{mslLoad}</span>
+            </div>
+            <div class="legend-item slds-col_padded">
+                <span class="legend-swatch smi-swatch"></span>
+                <span class="legend-label">SMI Pallets:</span>
+                <span class="legend-value">{smiLoad}</span>
+            </div>
+            <div class="legend-item empty-item slds-col_padded">
+                <span class="legend-swatch empty-swatch"></span>
+                <span class="legend-label">Empty:</span>
+                <span class="legend-value">{emptySpace}</span>
+            </div>
+        </div>
+
+        <div class="progress-slot">
+            <slot></slot>
+        </div>
+        
+    </section>
+</template>
