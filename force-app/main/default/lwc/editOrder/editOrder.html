@@ -1,0 +1,63 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 12-24-2025
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <!-- Edit Order Button -->
+    <lightning-button
+        variant="brand"
+        label="Edit Order"
+        title="Edit Order"
+        icon-name="utility:edit"
+        icon-position="left"
+        class="slds-m-around_small"
+        onclick={handleEditOrder}>
+    </lightning-button>
+
+    <!-- Modal -->
+    <template if:true={isModalOpen}>
+        <section
+            role="dialog"
+            tabindex="-1"
+            aria-modal="true"
+            class="slds-modal slds-fade-in-open">
+
+            <div class="slds-modal__container">
+                <!-- Header -->
+                <header class="slds-modal__header">
+                    <h2 class="slds-text-heading_medium">
+                        Edit Order
+                    </h2>
+                </header>
+
+                <!-- Body -->
+                <div class="slds-modal__content slds-p-around_medium">
+                    <template if:true={orderNumber}>
+                        <p><strong>Order Number:</strong> {orderNumber}</p>
+                        <p><strong>Status:</strong> {status}</p>
+                        <p><strong>Effective Date:</strong> {effectiveDate}</p>
+                        <p><strong>Account Id:</strong> {accountId}</p>
+                        <p><strong>Total Amount:</strong> {totalAmount}</p>
+                    </template>
+                    <template if:false={orderNumber}>
+                        <p class="slds-text-color_error">Order details not available. Ensure the component has a record context or URL id.</p>
+                    </template>
+                </div>
+
+                <!-- Footer -->
+                <footer class="slds-modal__footer">
+                    <lightning-button
+                        label="Close"
+                        onclick={closeModal}>
+                    </lightning-button>
+                </footer>
+            </div>
+        </section>
+
+        <!-- Backdrop -->
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>
